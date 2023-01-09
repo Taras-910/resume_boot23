@@ -1,14 +1,13 @@
 package ua.top.bootjava.to;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import ua.top.bootjava.HasId;
 
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
+@Getter
+@Setter
 @Data
 public abstract class BaseTo implements HasId {
     @Schema(hidden = true)

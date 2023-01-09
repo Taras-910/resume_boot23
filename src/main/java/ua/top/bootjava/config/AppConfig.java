@@ -8,13 +8,17 @@ import lombok.extern.slf4j.Slf4j;
 import org.h2.tools.Server;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
+import org.springframework.context.support.MessageSourceAccessor;
 import org.springframework.http.ProblemDetail;
+import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import ua.top.bootjava.util.JsonUtil;
 
 import java.sql.SQLException;
+import java.util.Locale;
 import java.util.Map;
 
 import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.ANY;
@@ -46,5 +50,17 @@ public class AppConfig {
         // https://stackoverflow.com/questions/7421474/548473
         objectMapper.addMixIn(ProblemDetail.class, MixIn.class);
         JsonUtil.setMapper(objectMapper);
+    }
+
+    @Bean
+    public SessionLocaleResolver localeResolver() {
+        SessionLocaleResolver slr = new SessionLocaleResolver();
+        slr.setDefaultLocale(Locale.US);
+        return slr;
+    }
+
+    @Bean
+    public MessageSourceAccessor getMessageSourceAccessor(MessageSource messageSource) {
+        return new MessageSourceAccessor(messageSource);
     }
 }

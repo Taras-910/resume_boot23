@@ -1,5 +1,6 @@
 package ua.top.bootjava.to;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -10,6 +11,7 @@ import ua.top.bootjava.util.validation.NoHtml;
 
 @Value
 @EqualsAndHashCode(callSuper = true)
+@Schema(hidden = true)
 public class UserTo extends NamedTo implements HasIdAndEmail {
     @Email
     @NotBlank

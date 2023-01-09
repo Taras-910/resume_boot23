@@ -1,9 +1,7 @@
 package ua.top.bootjava.error;
 
-import org.springframework.http.HttpStatus;
-
-public class IllegalRequestDataException extends AppException {
+public class IllegalRequestDataException extends RuntimeException {
     public IllegalRequestDataException(String msg) {
-        super(HttpStatus.UNPROCESSABLE_ENTITY, msg);
+        super(msg);
     }
 }

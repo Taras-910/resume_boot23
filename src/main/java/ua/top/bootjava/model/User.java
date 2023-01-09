@@ -24,8 +24,8 @@ import java.util.*;
 @Table(name = "users")
 @Getter
 @Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class User extends NamedEntity implements HasIdAndEmail, Serializable {
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
+public class User extends AbstractNamedEntity implements HasIdAndEmail, Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 

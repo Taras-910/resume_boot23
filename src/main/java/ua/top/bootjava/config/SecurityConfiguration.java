@@ -14,10 +14,10 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import ua.top.bootjava.AuthUser;
 import ua.top.bootjava.model.Role;
 import ua.top.bootjava.model.User;
 import ua.top.bootjava.repository.UserRepository;
-import ua.top.bootjava.web.AuthUser;
 
 import java.util.Optional;
 
@@ -56,9 +56,11 @@ public class SecurityConfiguration {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests()
-                .requestMatchers("/api/admin/**").hasRole(Role.ADMIN.name())
-                .requestMatchers(HttpMethod.POST, "/api/register").anonymous()
-                .requestMatchers("/api/**").authenticated()
+                .requestMatchers("/rest/admin/**").hasRole(Role.ADMIN.name())
+                .requestMatchers(HttpMethod.POST, "/rest/register").anonymous()
+                .requestMatchers("/rest/**").permitAll()
+                .requestMatchers("/admin/**").authenticated()
+                .requestMatchers("/profile/**").authenticated()
                 .and().httpBasic()
                 .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and().csrf().disable();
