@@ -24,7 +24,7 @@ public class RootController {
     public UserService userService;
     public ResumeService resumeService;
 
-    @GetMapping(value = { "/"})
+//    @GetMapping(value = { "/"})
     public String root() {
         return "redirect:login";
     }

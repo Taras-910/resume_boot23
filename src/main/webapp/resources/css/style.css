@@ -1,0 +1,110 @@
+dd {
+    display: inline-block;
+    margin-left: 8px;
+    vertical-align: top;
+}
+
+tr[resume-vote="false"] {
+    color: darkslategrey;
+}
+
+tr[resume-vote="true"] {
+    color: #05ae2a;
+}
+
+header, footer {
+    background: none repeat scroll 0 0 #A6C9E2;
+    color: #2E6E9E;
+    font-size: 20px;
+    padding: 5px 20px;
+    margin: 6px 0;
+}
+
+/*https://stackoverflow.com/a/53855189/548473*/
+#noty_layout__bottomRight {
+    width: 385px !important;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px; /* Set the fixed height of the footer here */
+    line-height: 60px; /* Vertically center the text there */
+    background-color: #f5f5f5;
+}
+
+body {
+    margin-bottom: 60px !important; /* Margin bottom by footer height */
+}
+
+/*https://getbootstrap.com/docs/4.0/examples/sticky-footer/sticky-footer.css*/
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+.fa {
+    cursor: pointer;
+}
+
+tr[data-userEnabled="false"] {
+    opacity: 0.3;
+}
+
+.col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.error, .message {
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.error {
+    color: #a94442;
+    background-color: #f2dede;
+    border: 1px solid #ebccd1;
+}
+
+.message {
+    color: #2f9635;
+    background-color: #c6fbc2;
+    border: 1px solid #9feba6;
+}
+
+.box {
+    background: #28b7bc;
+    display: -webkit-flex;
+    width: 100%;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #098696;
+    line-height: 40px;
+    font-size: 24px;
+    color: aliceblue;
+}
+
+.th {
+    border: 1px;
+    solid: #0397ba;
+}
+
+.uniqueClassName {
+    text-align: center;
+}
+
+.spinner-border {
+    visibility: hidden;
+}
+
+input.form-control::placeholder {
+    font-size: 80%;
+    font-style: italic;
+    color: #0397ba;
+    opacity: .3;
+}
+
