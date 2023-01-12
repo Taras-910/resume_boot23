@@ -26,9 +26,8 @@ import org.springframework.context.annotation.Configuration;
                         <p><b>Тестовые креденшелы:</b><br>
                         - user@yandex.ru / password<br>
                         - admin@gmail.com / admin<br>
-                        - guest@gmail.com / guest</p>
                         """,
-                contact = @Contact(url = "", name = "Taras Tarasenko", email = "promverstat.ua@gmail.com")
+                contact = @Contact(url = "", name = "Taras", email = "promverstat.ua@gmail.com")
         ),
         security = @SecurityRequirement(name = "basicAuth")
 )

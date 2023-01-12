@@ -38,6 +38,11 @@ public class ResumeRestController {
         return resumeService.getAllTos();
     }
 
+    @GetMapping("/all")
+    public List<Resume> getResumes() {
+        return resumeService.getAll();
+    }
+
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable int id) {

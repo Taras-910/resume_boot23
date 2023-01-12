@@ -97,25 +97,8 @@ public class AggregatorService {
         AtomicInteger i = new AtomicInteger(1);
         resumeTos.forEach(vacancyNet -> log.info("\nvacancyNet № {}\n{}\n", i.getAndIncrement(), vacancyNet.toString()));
         log.info(common_number, resumeTos.size());
-
-
     }
-
 }
-//        work address
-//
-//	      djinni   grc*10   habr  rabota   work  linkedin  total
-//all	    49	  49(0)	     1	     6	    16	   (100)	121
-//Украина	32	   4(0)	     -	     6	    30	     -	     72
-//remote 	 -	  49(0)	     1	     3	    12	    (5)	     65
-//foreign	49	   2(0)	     1	     1	     -	     -	     53
-//Киев	    15	   1(0)	     1	     3	    15	     -	     35
-//Минск	     1	  10(0)	     1	     6	     -	     -	     18
-//Львов	     6	    -	     -	     8	     2	     -	     16
-//Харьков	 5	    -	     -	     2	     5	     -	     12
-//Одесса	 5	    -	     -	     2	     4	     -	     11
-//Санкт-П	 5	   5(0)	     1	     -	     -	     -	     11
-//Москва	 -	   8(0)	     1	     -	     -	     -	      9
 
 
 

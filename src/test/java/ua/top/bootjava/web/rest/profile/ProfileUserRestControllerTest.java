@@ -9,7 +9,6 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import ua.top.bootjava.AbstractControllerTest;
 import ua.top.bootjava.model.User;
 import ua.top.bootjava.repository.UserRepository;
-import ua.top.bootjava.service.UserService;
 import ua.top.bootjava.to.UserTo;
 import ua.top.bootjava.util.JsonUtil;
 import ua.top.bootjava.util.UsersUtil;
@@ -29,8 +28,6 @@ class ProfileUserRestControllerTest extends AbstractControllerTest {
 
     @Autowired
     private UserRepository userRepository;
-    @Autowired
-    private UserService service;
 
     @Test
     @WithUserDetails(value = USER_MAIL)
@@ -53,7 +50,7 @@ class ProfileUserRestControllerTest extends AbstractControllerTest {
     void getUnAuth() throws Exception {
         perform(MockMvcRequestBuilders.get(REST_URL_SLASH + user_id))
                 .andDo(print())
-                .andExpect(status().isNotFound());
+                .andExpect(status().isUnauthorized());
     }
 
     @Test
@@ -81,6 +78,7 @@ class ProfileUserRestControllerTest extends AbstractControllerTest {
     }
 
     @Test
+    @WithUserDetails(value = ADMIN_MAIL)
     void register() throws Exception {
         UserTo newTo = new UserTo(null, "newName", "newemail@ya.ru", "newPassword");
         User newUser = UsersUtil.createNewFromTo(newTo);

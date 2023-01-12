@@ -50,7 +50,7 @@ public class SecurityConfiguration {
     //  https://stackoverflow.com/a/61147599/548473
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
-        return web -> web.ignoring().requestMatchers("/", "/v3/api-docs/**", "/swagger-ui.html", "/swagger-ui/**");
+        return web -> web.ignoring().requestMatchers("/swagger", "/v3/api-docs/**", "/swagger-ui.html", "/swagger-ui/**");
     }
 
     @Bean
@@ -58,7 +58,7 @@ public class SecurityConfiguration {
         http.authorizeHttpRequests()
                 .requestMatchers("/rest/admin/**").hasRole(Role.ADMIN.name())
                 .requestMatchers(HttpMethod.POST, "/rest/register").anonymous()
-                .requestMatchers("/rest/**").permitAll()
+                .requestMatchers("/rest/**").authenticated()
                 .requestMatchers("/admin/**").authenticated()
                 .requestMatchers("/profile/**").authenticated()
                 .and().httpBasic()
@@ -66,4 +66,16 @@ public class SecurityConfiguration {
                 .and().csrf().disable();
         return http.build();
     }
+
+/*@Bean
+public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+    http.authorizeRequests()
+            .anyRequest()
+            .permitAll()
+            .and()
+            .csrf()
+            .disable();
+    return http.build();
+}*/
+
 }
