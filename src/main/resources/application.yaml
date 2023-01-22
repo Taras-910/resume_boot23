@@ -1,6 +1,11 @@
 #  https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 spring:
 
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+
   sql.init.mode: always
 
   jpa:

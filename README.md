@@ -1,17 +1,17 @@
-Java Enterprise Project
-=======================
+Java Enterprise Project (without Web)
+=============================================================================
 
 Наиболее востребованные технологии /инструменты / фреймворки Java Enterprise:
-Maven/ Spring/ Security/ JPA(Hibernate)/ REST(Jackson)/ Bootstrap(CSS)/ jQuery + plugins.
+Maven/ Spring Boot/ Security/ JPA(Hibernate)/ REST(Jackson)/ Bootstrap(CSS)/ jQuery + plugins.
 
-### Миграция resume на Spring-Boot
-За основу взят код проекта resume021 с миграцией на Spring Boot 3.0
+### Миграция resume021 на Spring-Boot
+За основу взят код Spring-MVC проект resume021 с миграцией на Spring Boot 3.0
 
--------------------------------------------------------------
+-----------------------------------------------------------------------------
 - Stack: [JDK 17](http://jdk.java.net/17/), Spring Boot 3.0, Lombok, H2, Caffeine Cache, Swagger/OpenAPI 3.0
-- Run: `mvn spring-boot:run` in root directory.
------------------------------------------------------
-[REST API documentation](http://localhost:8080/)  
+-----------------------------------------------------------------------------
+- SWAGGER UI: [REST API documentation](http://localhost:8080/)
+-----------------------------------------------------------------------------
 Креденшелы:
 ```
 Admin: admin@gmail.com / admin

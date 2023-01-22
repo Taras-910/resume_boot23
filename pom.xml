@@ -135,10 +135,7 @@
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
-        <dependency>
-            <groupId>taglibs</groupId>
-            <artifactId>standard</artifactId>
-        </dependency>
+
 
         <!-- Need this to compile JSP -->
         <dependency>
