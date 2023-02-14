@@ -1,7 +1,7 @@
 Java Enterprise Project (without Web)
 =============================================================================
 
-Наиболее востребованные технологии /инструменты / фреймворки Java Enterprise:
+Технологии /инструменты / фреймворки Java Enterprise:
 Maven/ Spring Boot/ Security/ JPA(Hibernate)/ REST(Jackson)/ Bootstrap(CSS)/ jQuery + plugins.
 
 ### Миграция resume021 на Spring-Boot
@@ -12,9 +12,10 @@ Maven/ Spring Boot/ Security/ JPA(Hibernate)/ REST(Jackson)/ Bootstrap(CSS)/ jQu
 -----------------------------------------------------------------------------
 - SWAGGER UI: [REST API documentation](http://localhost:8080/)
 -----------------------------------------------------------------------------
+
 Креденшелы:
 ```
 Admin: admin@gmail.com / admin
 User:  user@yandex.ru / password
-Guest: guest@gmail.com / guest
+
 ```
